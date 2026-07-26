@@ -1,68 +1,820 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StellarTech Services - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stellar Technical Inspection Services & Calibrations | Oman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'stellar-navy': {
+                            950: '#060a12',
+                            900: '#081020',
+                            800: '#0c192e',
+                            700: '#13233f',
+                        },
+                        'stellar-blue': {
+                            600: '#005bb5',
+                            500: '#0077c8',
+                            400: '#1ea1f2',
+                            300: '#38bdf8',
+                            100: '#eef7ff',
+                        },
+                    }
+                }
+            }
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-        }
-        .badge {
-            display: inline-block;
-            background: rgba(59, 130, 246, 0.1);
-            color: #60a5fa;
-            padding: 6px 14px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 20px;
-            margin-bottom: 24px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.025em;
-        }
-        p {
-            color: #9ca3af;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-        .footer {
-            font-size: 0.85rem;
-            color: #6b7280;
-            border-top: 1px solid #1f2937;
-            padding-top: 20px;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <div class="container">
-        <div class="badge">Launching Soon</div>
-        <h1>Something Stellar Is On The Way</h1>
-        <p>We are currently building out our digital infrastructure. Check back soon for updates regarding our core services and platforms.</p>
-        <div class="footer">
-            &copy; 2026 StellarTech Services. All rights reserved.
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-stellar-navy-950 text-slate-300 text-xs py-2.5 px-6 border-b border-stellar-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6">
+                <span><i class="fa-solid fa-location-dot text-stellar-blue-300 mr-1.5"></i> Muscat, Sultanate of
+                    Oman</span>
+                <span><i class="fa-solid fa-phone text-stellar-blue-300 mr-1.5"></i> +968 9793 3096 / +968 9678
+                    2458</span>
+                <span><i class="fa-solid fa-envelope text-stellar-blue-300 mr-1.5"></i>
+                    contact-us@stellartech-services.com</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- <span class="text-slate-400 hidden sm:inline">ISO/IEC 17020 | 17024 | 17025 Accredited</span> -->
+                <a href="#" class="text-stellar-blue-300 hover:underline font-bold">العربية</a>
+            </div>
         </div>
     </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-2.5 flex justify-between items-center">
+
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center">
+                <img src="./Images/Logo.jpg" alt="Stellar Technical Inspection Services Logo"
+                    class="h-14 w-auto object-contain">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-7 font-semibold text-slate-700 text-sm">
+                <a href="#home" class="hover:text-stellar-blue-500 transition">Home</a>
+                <a href="#about" class="hover:text-stellar-blue-500 transition">About Us</a>
+                <a href="#services" class="hover:text-stellar-blue-500 transition">Services</a>
+                <a href="#erp-system" class="hover:text-stellar-blue-500 transition">Digital ERP & App</a>
+                <a href="#certificates" class="hover:text-stellar-blue-500 transition">Accreditations</a>
+                <a href="#contact" class="hover:text-stellar-blue-500 transition">Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <a href="#contact"
+                class="bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white font-bold px-5 py-2.5 rounded-md text-sm transition shadow-sm flex items-center gap-2">
+                <i class="fa-solid fa-clipboard-check text-xs"></i> Book Inspection
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-stellar-navy-900 text-white py-24 md:py-32 px-6 bg-cover bg-center"
+        style="background-image: linear-gradient(rgba(8, 16, 32, 0.92), rgba(8, 16, 32, 0.92)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1600&q=80');">
+        <div class="max-w-5xl mx-auto text-center">
+            <div
+                class="inline-flex items-center gap-2 bg-stellar-blue-600/30 text-stellar-blue-300 text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full border border-stellar-blue-400/30 mb-6">
+                <i class="fa-solid fa-shield-halved text-stellar-blue-300"></i>
+                Oman's Premier TPI, Testing & Calibration Authority
+            </div>
+            <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+                Precision Engineering. <br class="hidden sm:inline" />Unwavering <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-stellar-blue-300 via-sky-200 to-white">Safety
+                    & Compliance</span>.
+            </h1>
+            <p class="text-base md:text-lg text-slate-300 mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
+                Delivering third-party inspection, NDT, precision calibration, and training certifications managed
+                digitally via our integrated ERP & Mobile Field App.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services"
+                    class="bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white px-8 py-3.5 rounded-md font-bold transition shadow-lg shadow-stellar-blue-500/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cubes"></i> Explore Capabilities
+                </a>
+                <a href="#erp-system"
+                    class="bg-stellar-navy-800 hover:bg-stellar-navy-700 text-stellar-blue-300 border border-stellar-blue-400/40 px-8 py-3.5 rounded-md font-bold transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-mobile-screen-button"></i> ERP & Mobile App Glimpse
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-12 grid grid-cols-3 max-w-2xl mx-auto gap-4 pt-8 border-t border-slate-800">
+                <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-slate-200">
+                    <i class="fa-solid fa-circle-check text-stellar-blue-300"></i> Inspect
+                </div>
+                <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-slate-200">
+                    <i class="fa-solid fa-award text-stellar-blue-300"></i> Certified
+                </div>
+                <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-slate-200">
+                    <i class="fa-solid fa-gear text-stellar-blue-300"></i> Compliance
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <section class="py-10 bg-stellar-navy-950 text-white border-b border-stellar-navy-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
+                <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">5,000+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Tests Completed</div>
+            </div>
+            <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
+                <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">6,000+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Inspections Delivered</div>
+            </div>
+            <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
+                <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">2,000+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Personnel Certified</div>
+            </div>
+            <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
+                <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">3,000+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Instruments Calibrated</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section with Omani CEO Image -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider">Corporate Profile</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1">About Stellar Technical Services
+            </h2>
+            <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Founded on integrity, expertise, and efficiency across
+                energy, manufacturing, and construction sectors in Oman.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
+            <!-- Corporate Overview -->
+            <div class="flex flex-col justify-between space-y-6">
+                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex-1">
+                    <h3 class="text-xl font-bold text-stellar-navy-950 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-shield-cat text-stellar-blue-500"></i> Enterprise Quality & Verification
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Stellar Technical Services is a dynamic third-party inspection agency with a proven track record
+                        in Oman. From manufacturing hubs and construction sites to energy plants, we bring seasoned
+                        engineering professionals dedicated to safeguarding your operational assets.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        In an industry where safety and regulatory compliance are non-negotiable, Stellar stands as your
+                        trusted partner, delivering real-time inspection updates backed by automated digital reporting.
+                    </p>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-stellar-navy-900 text-white p-6 rounded-xl border border-stellar-navy-800">
+                        <div
+                            class="w-9 h-9 bg-stellar-blue-500 text-white rounded-lg flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1 text-stellar-blue-300">Our Mission</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            To empower clients with thorough assessments and rapid digital reporting, ensuring
+                            operations continuously surpass safety benchmarks.
+                        </p>
+                    </div>
+
+                    <div class="bg-stellar-navy-900 text-white p-6 rounded-xl border border-stellar-navy-800">
+                        <div
+                            class="w-9 h-9 bg-stellar-blue-500 text-white rounded-lg flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1 text-stellar-blue-300">Our Vision</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            To remain Oman's foremost market leader for third-party inspection, NDT, certification, and
+                            calibration through digitised excellence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CEO Message with Dummy Omani CEO Image -->
+            <div
+                class="bg-white p-8 rounded-xl border-2 border-slate-200 shadow-sm relative flex flex-col justify-between">
+                <div
+                    class="absolute -top-3.5 right-6 bg-stellar-navy-900 text-stellar-blue-300 text-xs font-bold px-3 py-1 rounded shadow border border-stellar-blue-500/30">
+                    Executive Leadership
+                </div>
+                <div>
+                    <div class="flex items-center gap-5 mb-6">
+                        <!-- Dummy Image of Omani CEO Executive -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+                            alt="CEO - Stellar Technical Services"
+                            class="w-20 h-20 rounded-full object-cover border-2 border-stellar-blue-500 shadow-md" />
+                        <div>
+                            <h3 class="font-bold text-lg text-stellar-navy-950">Eng. Tariq Al-Busaidi</h3>
+                            <p class="text-xs font-semibold text-stellar-blue-500">Chief Executive Officer</p>
+                            <p class="text-[11px] text-slate-500">Stellar Technical Services Oman</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-600 text-sm leading-relaxed italic space-y-3">
+                        <p>"Dear Valued Clients and Industry Partners,</p>
+                        <p>At Stellar Technical Services, our commitment to accuracy, integrity, and innovation forms
+                            the bedrock of our business. We understand the critical nature of reliable third-party
+                            assessments across the Sultanate.</p>
+                        <p>Through our proprietary Enterprise ERP and Mobile Field Application, we ensure seamless
+                            scheduling, instant field inspection logging, and tamper-proof digital certificates with
+                            instant QR verification."</p>
+                    </blockquote>
+                </div>
+                <div
+                    class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500 font-semibold">
+                    <span>Quality &bull; Safety &bull; Digital Innovation</span>
+                    <span class="text-stellar-navy-950 font-bold">Stellar Leadership</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ERP & Mobile App Feature Section -->
+    <section id="erp-system" class="py-20 bg-stellar-navy-900 text-white border-y border-stellar-navy-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span
+                    class="bg-stellar-blue-500/20 text-stellar-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-stellar-blue-400/30 uppercase tracking-wider">Smart
+                    Infrastructure</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Internal ERP System & Mobile App</h2>
+                <p class="text-slate-300 mt-2 max-w-2xl mx-auto text-sm">
+                    Our operations are powered by a custom-built Enterprise Resource Planning (ERP) platform and
+                    Inspector Mobile App, connecting field engineers, project managers, and clients in real time.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- ERP Features Breakdown -->
+                <div class="space-y-6">
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-lg bg-stellar-navy-800/80 border border-stellar-navy-700">
+                        <div
+                            class="w-12 h-12 bg-stellar-blue-500/20 rounded-lg flex items-center justify-center text-stellar-blue-300 font-bold text-xl shrink-0">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base text-white">Project Management & Job Dispatch</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Automated assignment of qualified inspectors based on standard accreditations (ASME,
+                                API, ISO), scheduling equipment testing with live status tracking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-lg bg-stellar-navy-800/80 border border-stellar-navy-700">
+                        <div
+                            class="w-12 h-12 bg-stellar-blue-500/20 rounded-lg flex items-center justify-center text-stellar-blue-300 font-bold text-xl shrink-0">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base text-white">Mobile Inspector App</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Field engineers record equipment test measurements, upload photographic proof, log NDT
+                                readings, and issue digital site stickers directly from smartphones or tablets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-lg bg-stellar-navy-800/80 border border-stellar-navy-700">
+                        <div
+                            class="w-12 h-12 bg-stellar-blue-500/20 rounded-lg flex items-center justify-center text-stellar-blue-300 font-bold text-xl shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base text-white">Training & Operator Certification Hub</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Centralized management of operator assessments, rigger/crane operator card issuance,
+                                training renewals, and candidate competency tracking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-lg bg-stellar-navy-800/80 border border-stellar-navy-700">
+                        <div
+                            class="w-12 h-12 bg-stellar-blue-500/20 rounded-lg flex items-center justify-center text-stellar-blue-300 font-bold text-xl shrink-0">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base text-white">Instant QR Code Verification Portal</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                Every certificate and ID card generated features a unique QR code linked to our ERP
+                                server, allowing site safety officers to instantly verify authenticity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Visual Mockups -->
+                <div class="space-y-6">
+                    <div class="bg-stellar-navy-800 p-4 rounded-xl border border-stellar-navy-700 shadow-2xl">
+                        <div
+                            class="flex items-center justify-between pb-3 mb-3 border-b border-slate-700 text-xs text-slate-400">
+                            <span class="flex items-center gap-2"><i
+                                    class="fa-solid fa-desktop text-stellar-blue-300"></i> Stellar Central ERP
+                                Portal</span>
+                            <span
+                                class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded">Live
+                                Server v4.2</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                            alt="Stellar ERP Management Dashboard" class="rounded-lg w-full h-52 object-cover" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-stellar-navy-800 p-3 rounded-xl border border-stellar-navy-700">
+                            <div class="text-[11px] font-bold text-stellar-blue-300 mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-tablet-screen-button"></i> Mobile Inspector Interface
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
+                                alt="Inspector Mobile App" class="rounded-lg w-full h-28 object-cover" />
+                        </div>
+
+                        <div class="bg-stellar-navy-800 p-3 rounded-xl border border-stellar-navy-700">
+                            <div class="text-[11px] font-bold text-stellar-blue-300 mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-certificate"></i> Digital Certificate Generator
+                            </div>
+                            <div
+                                class="bg-slate-900 p-2.5 rounded border border-slate-700 text-[10px] font-mono text-slate-300 space-y-1">
+                                <div class="text-emerald-400 font-bold">[ERP STATUS: VALIDATED]</div>
+                                <div>Cert ID: ST-2026-8891</div>
+                                <div>Equip: Mobile Crane 50T</div>
+                                <div>QR Sync: Complete</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates & Accredited Standards Glimpse -->
+    <section id="certificates" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider">Global Standards</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1">Accreditations & Certification
+                Glimpse</h2>
+            <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Operating under strictly audited international quality,
+                training, and calibration benchmarks.</p>
+        </div>
+
+        <!-- Certificate Mockups Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+
+            <!-- ISO 17020 Badge / Certificate Card -->
+            <div
+                class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-stellar-blue-500 transition">
+                <div
+                    class="w-12 h-12 bg-stellar-blue-100 text-stellar-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block">Inspection
+                    Authority</span>
+                <h3 class="text-lg font-bold text-stellar-navy-950 mb-2">ISO/IEC 17020 Accredited</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Recognized Type-A Inspection Body authorization for third-party examination of cranes, lifting
+                    equipment, pressure vessels, and heavy machinery.
+                </p>
+                <div
+                    class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                    <span>ERP Audit ID: ISO-17020</span>
+                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+            </div>
+
+            <!-- ISO 17025 Badge / Certificate Card -->
+            <div
+                class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-stellar-blue-500 transition">
+                <div
+                    class="w-12 h-12 bg-stellar-blue-100 text-stellar-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </div>
+                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block">Testing &
+                    Calibration</span>
+                <h3 class="text-lg font-bold text-stellar-navy-950 mb-2">ISO/IEC 17025 Accredited</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    International accreditation for calibration laboratories covering pressure, electrical, mechanical,
+                    and torque measurement instruments.
+                </p>
+                <div
+                    class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                    <span>ERP Audit ID: ISO-17025</span>
+                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+            </div>
+
+            <!-- ISO 17024 Badge / Certificate Card -->
+            <div
+                class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-stellar-blue-500 transition">
+                <div
+                    class="w-12 h-12 bg-stellar-blue-100 text-stellar-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block">Personnel
+                    Certification</span>
+                <h3 class="text-lg font-bold text-stellar-navy-950 mb-2">ISO/IEC 17024 Accredited</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Certified personnel body validating crane operators, riggers, scaffolders, and safety supervisors
+                    across industrial sites.
+                </p>
+                <div
+                    class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                    <span>ERP Audit ID: ISO-17024</span>
+                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificate Visual Mockup Bar -->
+        <div
+            class="bg-slate-100 p-8 rounded-2xl border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2">
+                <span class="bg-stellar-blue-500 text-white text-[10px] font-bold px-2.5 py-1 rounded">E-CERTIFICATE
+                    FEATURE</span>
+                <h4 class="text-xl font-bold text-stellar-navy-950">Automated Digital Inspection Certificates</h4>
+                <p class="text-xs text-slate-600 max-w-xl leading-relaxed">
+                    All issued documents are generated directly through our internal ERP with tamper-evident digital
+                    signatures, asset parameters, test loads, and instant QR verification.
+                </p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <div class="bg-white p-3 rounded-lg border border-slate-300 text-center shadow-sm">
+                    <i class="fa-solid fa-qrcode text-4xl text-slate-800"></i>
+                    <span class="text-[9px] font-bold text-slate-500 block mt-1">Scan to Verify</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Services Catalog -->
+    <section id="services" class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider">Comprehensive
+                    Solutions</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1">Services & Capabilities</h2>
+                <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Select a category below to explore our certified
+                    technical and testing solutions.</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="serviceTabs">
+                <button onclick="switchTab('inspection')" id="tab-inspection"
+                    class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-stellar-navy-900 text-stellar-blue-300 shadow">
+                    1. Equipment Inspection
+                </button>
+                <button onclick="switchTab('testing')" id="tab-testing"
+                    class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200">
+                    2. NDT & Load Testing
+                </button>
+                <button onclick="switchTab('calibration')" id="tab-calibration"
+                    class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200">
+                    3. Calibration (ISO 17025)
+                </button>
+                <button onclick="switchTab('training')" id="tab-training"
+                    class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200">
+                    4. Training & Personnel
+                </button>
+            </div>
+
+            <!-- Tab Content 1: Inspection -->
+            <div id="content-inspection" class="service-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
+                        Cranes & Lifting <i class="fa-solid fa-dharmachakra"></i>
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
+                        <li>• Mobile Crane</li>
+                        <li>• Crawler Crane</li>
+                        <li>• Tower Crane</li>
+                        <li>• Lorry Loading</li>
+                        <li>• EOT Crane</li>
+                        <li>• Portal Crane</li>
+                        <li>• A-Frames</li>
+                        <li>• Monorails</li>
+                        <li>• Jib Cranes</li>
+                        <li>• Derricks</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
+                        Earth Moving <i class="fa-solid fa-trowel-bricks"></i>
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
+                        <li>• Wheel Loader</li>
+                        <li>• Excavator</li>
+                        <li>• Backhoe Loader</li>
+                        <li>• Dozer / Grader</li>
+                        <li>• Tipper / Dumper</li>
+                        <li>• Rollers</li>
+                        <li>• Skid Loader</li>
+                        <li>• Drilling Rigs</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
+                        MEWPs & Material Handling <i class="fa-solid fa-elevator"></i>
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
+                        <li>• Man / Scissor Lift</li>
+                        <li>• Spider Lift</li>
+                        <li>• Boom Lifts</li>
+                        <li>• Forklifts</li>
+                        <li>• Telehandlers</li>
+                        <li>• Pallet Trucks</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
+                        Lifting Gears & PPE <i class="fa-solid fa-link"></i>
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
+                        <li>• Wire Rope Slings</li>
+                        <li>• Webbing Slings</li>
+                        <li>• Chain Slings</li>
+                        <li>• Shackles / Hooks</li>
+                        <li>• Body Harnesses</li>
+                        <li>• Fall Arrestors</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
+                        Construction Plant <i class="fa-solid fa-gears"></i>
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
+                        <li>• Generators</li>
+                        <li>• Welding Units</li>
+                        <li>• Tower Lights</li>
+                        <li>• Air Compressors</li>
+                        <li>• Compactors</li>
+                        <li>• Power Tools</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
+                        Transport & Hoists <i class="fa-solid fa-truck"></i>
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
+                        <li>• Prime Movers</li>
+                        <li>• Trailers</li>
+                        <li>• Water/Diesel Tankers</li>
+                        <li>• Winches</li>
+                        <li>• Passenger Hoists</li>
+                        <li>• Window Cradles</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tab Content 2: Testing -->
+            <div id="content-testing" class="service-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-3 mb-3 text-base text-stellar-blue-500 flex items-center gap-2">
+                        <i class="fa-solid fa-microscope text-stellar-blue-400"></i> Non-Destructive Testing (NDT)
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-2">
+                        <li>• <strong>MPI & DPT:</strong> Main & Aux Crane Hooks, Forklift Forks</li>
+                        <li>• <strong>Structural Attachments:</strong> Excavator Buckets, Telehandler Attachments</li>
+                        <li>• <strong>Transport Interfaces:</strong> Trailer King Pins, Prime Mover Fifth Wheels</li>
+                        <li>• <strong>Lifting Points:</strong> Pad Eyes, Eye Bolts, Eye Nuts, Swivel Rings</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h4
+                        class="font-bold text-stellar-navy-950 border-b pb-3 mb-3 text-base text-stellar-blue-500 flex items-center gap-2">
+                        <i class="fa-solid fa-weight-hanging text-stellar-blue-400"></i> Proof Load & Destructive
+                        Testing
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-2">
+                        <li>• <strong>Load Testing:</strong> Forklifts, Winches, Hanging Platforms</li>
+                        <li>• <strong>Pull & Drop Testing:</strong> Passenger Hoists, Construction Cradles</li>
+                        <li>• <strong>Lifting Anchor Verification:</strong> Pad Eyes, Lashing Points, Hoist Rings</li>
+                        <li>• <strong>Wire Rope Testing:</strong> Break Load & Tension Verification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tab Content 3: Calibration -->
+            <div id="content-calibration"
+                class="service-content hidden bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                <div class="mb-6">
+                    <h4 class="font-bold text-stellar-navy-950 text-base text-stellar-blue-500 mb-1">
+                        <i class="fa-solid fa-gauge-high text-stellar-blue-400 mr-2"></i> ISO/IEC 17025 Accredited
+                        Calibration Services
+                    </h4>
+                    <p class="text-xs text-slate-500">Ensuring precise instrument readouts across electrical, pressure,
+                        and mechanical devices.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-slate-700">
+                    <div class="p-3 bg-slate-50 rounded border">• Welding Machines</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Torque Wrenches / Multipliers</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Pressure Gauges & Valves</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Multi & Single Gas Detectors</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Multimeters & Clamp Meters</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Vernier Calipers / Screw Gauges</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Tachometers & RPM Meters</div>
+                    <div class="p-3 bg-slate-50 rounded border">• Anemometers & Lux Meters</div>
+                </div>
+            </div>
+
+            <!-- Tab Content 4: Training -->
+            <div id="content-training"
+                class="service-content hidden bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                <div class="mb-6">
+                    <h4 class="font-bold text-stellar-navy-950 text-base text-stellar-blue-500 mb-1">
+                        <i class="fa-solid fa-user-graduate text-stellar-blue-400 mr-2"></i> ISO/IEC 17024 Certified
+                        Training & Assessments
+                    </h4>
+                    <p class="text-xs text-slate-500">Empowering workforce competency with accredited safety
+                        certifications.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-700">
+                    <div>
+                        <h5 class="font-bold text-stellar-navy-950 mb-2 uppercase text-[11px] text-stellar-blue-500">
+                            Personnel Safety Training</h5>
+                        <ul class="space-y-1.5">
+                            <li>• Rigger Level 1 / Level 2 / Level 3</li>
+                            <li>• Scaffold Erector, Supervisor & Inspector</li>
+                            <li>• Slinger / Banksman & Lifting Supervisor</li>
+                            <li>• Work at Height & Confined Space Safety</li>
+                            <li>• Welder, First Aider & Fire Warden</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-stellar-navy-950 mb-2 uppercase text-[11px] text-stellar-blue-500">
+                            Operator Competency Assessments</h5>
+                        <ul class="space-y-1.5">
+                            <li>• Crane Operators (Mobile, Tower, Overhead)</li>
+                            <li>• Earth Moving Machinery Operators</li>
+                            <li>• Material Handling & Forklift Operators</li>
+                            <li>• MEWP & Aerial Platform Operators</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-stellar-navy-950 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <span class="text-stellar-blue-300 font-bold uppercase text-xs tracking-wider">Contact Us</span>
+                <h2 class="text-3xl font-extrabold mt-1 mb-6">Request Inspection & Technical Quotes</h2>
+                <p class="text-slate-300 text-sm mb-8 leading-relaxed">
+                    Get in touch with our certified engineering specialists in Oman for inquiries, calibration
+                    schedules, or training proposals.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Phone Support</h4>
+                            <p class="text-slate-300 text-sm">+968 9793 3096 / +968 9678 2458</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Direct Email</h4>
+                            <p class="text-slate-300 text-sm">contact-us@stellartech-services.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Website</h4>
+                            <p class="text-slate-300 text-sm">www.stellartech-services.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Head Office</h4>
+                            <p class="text-slate-300 text-sm">Sultanate of Oman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Request Form -->
+            <div class="bg-stellar-navy-900 p-8 rounded-xl border border-stellar-navy-800 shadow-xl">
+                <h3 class="text-xl font-bold text-white mb-6">Schedule Service</h3>
+                <form class="space-y-4 text-slate-800">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Company Name</label>
+                        <input type="text"
+                            class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
+                            placeholder="e.g. Oman Construction Company" />
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Contact Person</label>
+                            <input type="text"
+                                class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
+                                placeholder="Full Name" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Phone</label>
+                            <input type="tel"
+                                class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
+                                placeholder="+968 ..." />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Service Required</label>
+                        <select
+                            class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500 text-slate-700">
+                            <option>Equipment Inspection (Cranes / MEWPs / Earthmoving)</option>
+                            <option>NDT & Load Testing (MPI / DPT)</option>
+                            <option>Instrument Calibration (ISO 17025)</option>
+                            <option>Training & Operator Certification (ISO 17024)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Details / Scope</label>
+                        <textarea rows="3"
+                            class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
+                            placeholder="Specify machinery quantities or location..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white font-extrabold py-3 rounded text-sm transition shadow-md">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Logo -->
+    <footer class="bg-black text-slate-400 py-12 text-xs border-t border-stellar-navy-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <div>
+                    <span class="text-white font-bold text-sm block">Stellar Technical Services</span>
+                    <p class="text-slate-500">Sultanate of Oman &bull; ISO/IEC 17020, 17024, 17025 Accredited</p>
+                </div>
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="#home" class="hover:text-stellar-blue-300">Home</a>
+                <a href="#about" class="hover:text-stellar-blue-300">About</a>
+                <a href="#erp-system" class="hover:text-stellar-blue-300">ERP Platform</a>
+                <a href="#services" class="hover:text-stellar-blue-300">Services</a>
+                <a href="#contact" class="hover:text-stellar-blue-300">Contact</a>
+            </div>
+            <p>&copy; 2026 Stellar Technical Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple JS Script for Interactive Tab Switching -->
+    <script>
+        function switchTab(tabKey) {
+            document.querySelectorAll('.service-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('#serviceTabs button').forEach(btn => {
+                btn.className = 'px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200';
+            });
+            document.getElementById('content-' + tabKey).classList.remove('hidden');
+            const activeBtn = document.getElementById('tab-' + tabKey);
+            activeBtn.className = 'px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-stellar-navy-900 text-stellar-blue-300 shadow';
+        }
+    </script>
 </body>
+
 </html>
