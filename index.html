@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" dir="ltr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,11 +7,17 @@
     <title>Stellar Technical Inspection Services & Calibrations | Oman</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
                     colors: {
                         'stellar-navy': {
                             950: '#060a12',
@@ -39,16 +45,20 @@
     <div class="bg-stellar-navy-950 text-slate-300 text-xs py-2.5 px-6 border-b border-stellar-navy-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6">
-                <span><i class="fa-solid fa-location-dot text-stellar-blue-300 mr-1.5"></i> Muscat, Sultanate of
-                    Oman</span>
-                <span><i class="fa-solid fa-phone text-stellar-blue-300 mr-1.5"></i> +968 9793 3096 / +968 9678
+                <span><i class="fa-solid fa-location-dot text-stellar-blue-300 mr-1.5 ml-1.5"></i> <span
+                        data-i18n="location">Muscat, Sultanate of Oman</span></span>
+                <span><i class="fa-solid fa-phone text-stellar-blue-300 mr-1.5 ml-1.5"></i> +968 9793 3096 / +968 9678
                     2458</span>
-                <span><i class="fa-solid fa-envelope text-stellar-blue-300 mr-1.5"></i>
+                <span><i class="fa-solid fa-envelope text-stellar-blue-300 mr-1.5 ml-1.5"></i>
                     contact-us@stellartech-services.com</span>
             </div>
-            <div class="flex items-center space-x-4">
-                <!-- <span class="text-slate-400 hidden sm:inline">ISO/IEC 17020 | 17024 | 17025 Accredited</span> -->
-                <a href="#" class="text-stellar-blue-300 hover:underline font-bold">العربية</a>
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- <span class="text-slate-400 hidden sm:inline" data-i18n="accreditation_bar">ISO/IEC 17020 | 17024 |
+                    17025 Accredited</span> -->
+                <button onclick="toggleLanguage()" id="langBtn"
+                    class="text-stellar-blue-300 hover:underline font-bold flex items-center gap-1 bg-stellar-navy-800 px-3 py-1 rounded border border-stellar-blue-500/30">
+                    <i class="fa-solid fa-globe text-xs"></i> <span id="langBtnText">العربية</span>
+                </button>
             </div>
         </div>
     </div>
@@ -64,19 +74,21 @@
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center space-x-7 font-semibold text-slate-700 text-sm">
-                <a href="#home" class="hover:text-stellar-blue-500 transition">Home</a>
-                <a href="#about" class="hover:text-stellar-blue-500 transition">About Us</a>
-                <a href="#services" class="hover:text-stellar-blue-500 transition">Services</a>
-                <a href="#erp-system" class="hover:text-stellar-blue-500 transition">Digital ERP & App</a>
-                <a href="#certificates" class="hover:text-stellar-blue-500 transition">Accreditations</a>
-                <a href="#contact" class="hover:text-stellar-blue-500 transition">Contact</a>
+            <nav class="hidden lg:flex items-center space-x-7 space-x-reverse font-semibold text-slate-700 text-sm">
+                <a href="#home" class="hover:text-stellar-blue-500 transition" data-i18n="nav_home">Home</a>
+                <a href="#about" class="hover:text-stellar-blue-500 transition" data-i18n="nav_about">About Us</a>
+                <a href="#services" class="hover:text-stellar-blue-500 transition" data-i18n="nav_services">Services</a>
+                <a href="#erp-system" class="hover:text-stellar-blue-500 transition" data-i18n="nav_erp">Digital ERP &
+                    App</a>
+                <a href="#certificates" class="hover:text-stellar-blue-500 transition"
+                    data-i18n="nav_accred">Accreditations</a>
+                <a href="#contact" class="hover:text-stellar-blue-500 transition" data-i18n="nav_contact">Contact</a>
             </nav>
 
             <!-- Action Button -->
             <a href="#contact"
                 class="bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white font-bold px-5 py-2.5 rounded-md text-sm transition shadow-sm flex items-center gap-2">
-                <i class="fa-solid fa-clipboard-check text-xs"></i> Book Inspection
+                <i class="fa-solid fa-clipboard-check text-xs"></i> <span data-i18n="btn_book">Book Inspection</span>
             </a>
         </div>
     </header>
@@ -88,14 +100,13 @@
             <div
                 class="inline-flex items-center gap-2 bg-stellar-blue-600/30 text-stellar-blue-300 text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full border border-stellar-blue-400/30 mb-6">
                 <i class="fa-solid fa-shield-halved text-stellar-blue-300"></i>
-                Oman's Premier TPI, Testing & Calibration Authority
+                <span data-i18n="hero_badge">Oman's Premier TPI, Testing & Calibration Authority</span>
             </div>
-            <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
-                Precision Engineering. <br class="hidden sm:inline" />Unwavering <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-stellar-blue-300 via-sky-200 to-white">Safety
-                    & Compliance</span>.
+            <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-6 leading-tight" data-i18n="hero_title">
+                Precision Engineering. Unwavering Safety & Compliance.
             </h1>
-            <p class="text-base md:text-lg text-slate-300 mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
+            <p class="text-base md:text-lg text-slate-300 mb-8 max-w-3xl mx-auto font-normal leading-relaxed"
+                data-i18n="hero_sub">
                 Delivering third-party inspection, NDT, precision calibration, and training certifications managed
                 digitally via our integrated ERP & Mobile Field App.
             </p>
@@ -103,24 +114,28 @@
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#services"
                     class="bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white px-8 py-3.5 rounded-md font-bold transition shadow-lg shadow-stellar-blue-500/30 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-cubes"></i> Explore Capabilities
+                    <i class="fa-solid fa-cubes"></i> <span data-i18n="btn_explore">Explore Capabilities</span>
                 </a>
                 <a href="#erp-system"
                     class="bg-stellar-navy-800 hover:bg-stellar-navy-700 text-stellar-blue-300 border border-stellar-blue-400/40 px-8 py-3.5 rounded-md font-bold transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-mobile-screen-button"></i> ERP & Mobile App Glimpse
+                    <i class="fa-solid fa-mobile-screen-button"></i> <span data-i18n="btn_erp">ERP & Mobile App
+                        Glimpse</span>
                 </a>
             </div>
 
             <!-- Trust Badges -->
             <div class="mt-12 grid grid-cols-3 max-w-2xl mx-auto gap-4 pt-8 border-t border-slate-800">
                 <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-slate-200">
-                    <i class="fa-solid fa-circle-check text-stellar-blue-300"></i> Inspect
+                    <i class="fa-solid fa-circle-check text-stellar-blue-300"></i> <span
+                        data-i18n="badge_inspect">Inspect</span>
                 </div>
                 <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-slate-200">
-                    <i class="fa-solid fa-award text-stellar-blue-300"></i> Certified
+                    <i class="fa-solid fa-award text-stellar-blue-300"></i> <span
+                        data-i18n="badge_certified">Certified</span>
                 </div>
                 <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-slate-200">
-                    <i class="fa-solid fa-gear text-stellar-blue-300"></i> Compliance
+                    <i class="fa-solid fa-gear text-stellar-blue-300"></i> <span
+                        data-i18n="badge_compliance">Compliance</span>
                 </div>
             </div>
         </div>
@@ -131,19 +146,23 @@
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
                 <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">5,000+</div>
-                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Tests Completed</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold" data-i18n="stat_tests">Tests
+                    Completed</div>
             </div>
             <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
                 <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">6,000+</div>
-                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Inspections Delivered</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold" data-i18n="stat_inspections">
+                    Inspections Delivered</div>
             </div>
             <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
                 <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">2,000+</div>
-                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Personnel Certified</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold" data-i18n="stat_certified">
+                    Personnel Certified</div>
             </div>
             <div class="p-4 rounded-xl bg-stellar-navy-900 border border-stellar-navy-800">
                 <div class="text-3xl md:text-4xl font-extrabold text-stellar-blue-300 mb-1">3,000+</div>
-                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Instruments Calibrated</div>
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold" data-i18n="stat_calibrated">
+                    Instruments Calibrated</div>
             </div>
         </div>
     </section>
@@ -151,11 +170,12 @@
     <!-- About Us Section with Omani CEO Image -->
     <section id="about" class="py-20 max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider">Corporate Profile</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1">About Stellar Technical Services
-            </h2>
-            <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Founded on integrity, expertise, and efficiency across
-                energy, manufacturing, and construction sectors in Oman.</p>
+            <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider"
+                data-i18n="about_tag">Corporate Profile</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1" data-i18n="about_title">About
+                Stellar Technical Services</h2>
+            <p class="text-slate-600 mt-2 max-w-2xl mx-auto" data-i18n="about_desc">Founded on integrity, expertise, and
+                efficiency across energy, manufacturing, and construction sectors in Oman.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
@@ -163,14 +183,15 @@
             <div class="flex flex-col justify-between space-y-6">
                 <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex-1">
                     <h3 class="text-xl font-bold text-stellar-navy-950 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-shield-cat text-stellar-blue-500"></i> Enterprise Quality & Verification
+                        <i class="fa-solid fa-shield-cat text-stellar-blue-500"></i> <span
+                            data-i18n="about_h1">Enterprise Quality & Verification</span>
                     </h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="about_p1">
                         Stellar Technical Services is a dynamic third-party inspection agency with a proven track record
                         in Oman. From manufacturing hubs and construction sites to energy plants, we bring seasoned
                         engineering professionals dedicated to safeguarding your operational assets.
                     </p>
-                    <p class="text-slate-600 text-sm leading-relaxed">
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="about_p2">
                         In an industry where safety and regulatory compliance are non-negotiable, Stellar stands as your
                         trusted partner, delivering real-time inspection updates backed by automated digital reporting.
                     </p>
@@ -183,8 +204,9 @@
                             class="w-9 h-9 bg-stellar-blue-500 text-white rounded-lg flex items-center justify-center font-bold mb-3">
                             <i class="fa-solid fa-bullseye"></i>
                         </div>
-                        <h4 class="font-bold text-sm mb-1 text-stellar-blue-300">Our Mission</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <h4 class="font-bold text-sm mb-1 text-stellar-blue-300" data-i18n="mission_title">Our Mission
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="mission_desc">
                             To empower clients with thorough assessments and rapid digital reporting, ensuring
                             operations continuously surpass safety benchmarks.
                         </p>
@@ -195,8 +217,9 @@
                             class="w-9 h-9 bg-stellar-blue-500 text-white rounded-lg flex items-center justify-center font-bold mb-3">
                             <i class="fa-solid fa-eye"></i>
                         </div>
-                        <h4 class="font-bold text-sm mb-1 text-stellar-blue-300">Our Vision</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <h4 class="font-bold text-sm mb-1 text-stellar-blue-300" data-i18n="vision_title">Our Vision
+                        </h4>
+                        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="vision_desc">
                             To remain Oman's foremost market leader for third-party inspection, NDT, certification, and
                             calibration through digitised excellence.
                         </p>
@@ -207,36 +230,37 @@
             <!-- CEO Message with Dummy Omani CEO Image -->
             <div
                 class="bg-white p-8 rounded-xl border-2 border-slate-200 shadow-sm relative flex flex-col justify-between">
-                <div
-                    class="absolute -top-3.5 right-6 bg-stellar-navy-900 text-stellar-blue-300 text-xs font-bold px-3 py-1 rounded shadow border border-stellar-blue-500/30">
+                <div class="absolute -top-3.5 right-6 left-auto rtl:right-auto rtl:left-6 bg-stellar-navy-900 text-stellar-blue-300 text-xs font-bold px-3 py-1 rounded shadow border border-stellar-blue-500/30"
+                    data-i18n="ceo_badge">
                     Executive Leadership
                 </div>
                 <div>
                     <div class="flex items-center gap-5 mb-6">
-                        <!-- Dummy Image of Omani CEO Executive -->
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
                             alt="CEO - Stellar Technical Services"
                             class="w-20 h-20 rounded-full object-cover border-2 border-stellar-blue-500 shadow-md" />
                         <div>
-                            <h3 class="font-bold text-lg text-stellar-navy-950">Eng. Tariq Al-Busaidi</h3>
-                            <p class="text-xs font-semibold text-stellar-blue-500">Chief Executive Officer</p>
+                            <h3 class="font-bold text-lg text-stellar-navy-950" data-i18n="ceo_name">Eng. Tariq
+                                Al-Busaidi</h3>
+                            <p class="text-xs font-semibold text-stellar-blue-500" data-i18n="ceo_role">Chief Executive
+                                Officer</p>
                             <p class="text-[11px] text-slate-500">Stellar Technical Services Oman</p>
                         </div>
                     </div>
                     <blockquote class="text-slate-600 text-sm leading-relaxed italic space-y-3">
-                        <p>"Dear Valued Clients and Industry Partners,</p>
-                        <p>At Stellar Technical Services, our commitment to accuracy, integrity, and innovation forms
-                            the bedrock of our business. We understand the critical nature of reliable third-party
-                            assessments across the Sultanate.</p>
-                        <p>Through our proprietary Enterprise ERP and Mobile Field Application, we ensure seamless
-                            scheduling, instant field inspection logging, and tamper-proof digital certificates with
-                            instant QR verification."</p>
+                        <p data-i18n="ceo_q1">"Dear Valued Clients and Industry Partners,</p>
+                        <p data-i18n="ceo_q2">At Stellar Technical Services, our commitment to accuracy, integrity, and
+                            innovation forms the bedrock of our business. We understand the critical nature of reliable
+                            third-party assessments across the Sultanate.</p>
+                        <p data-i18n="ceo_q3">Through our proprietary Enterprise ERP and Mobile Field Application, we
+                            ensure seamless scheduling, instant field inspection logging, and tamper-proof digital
+                            certificates with instant QR verification."</p>
                     </blockquote>
                 </div>
                 <div
                     class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500 font-semibold">
-                    <span>Quality &bull; Safety &bull; Digital Innovation</span>
-                    <span class="text-stellar-navy-950 font-bold">Stellar Leadership</span>
+                    <span data-i18n="ceo_footer">Quality &bull; Safety &bull; Digital Innovation</span>
+                    <span class="text-stellar-navy-950 font-bold" data-i18n="ceo_sign">Stellar Leadership</span>
                 </div>
             </div>
         </div>
@@ -247,10 +271,11 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <span
-                    class="bg-stellar-blue-500/20 text-stellar-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-stellar-blue-400/30 uppercase tracking-wider">Smart
-                    Infrastructure</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Internal ERP System & Mobile App</h2>
-                <p class="text-slate-300 mt-2 max-w-2xl mx-auto text-sm">
+                    class="bg-stellar-blue-500/20 text-stellar-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-stellar-blue-400/30 uppercase tracking-wider"
+                    data-i18n="erp_tag">Smart Infrastructure</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-3" data-i18n="erp_title">Internal ERP System & Mobile
+                    App</h2>
+                <p class="text-slate-300 mt-2 max-w-2xl mx-auto text-sm" data-i18n="erp_desc">
                     Our operations are powered by a custom-built Enterprise Resource Planning (ERP) platform and
                     Inspector Mobile App, connecting field engineers, project managers, and clients in real time.
                 </p>
@@ -266,8 +291,9 @@
                             <i class="fa-solid fa-list-check"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-base text-white">Project Management & Job Dispatch</h4>
-                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                            <h4 class="font-bold text-base text-white" data-i18n="erp_f1_title">Project Management & Job
+                                Dispatch</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="erp_f1_desc">
                                 Automated assignment of qualified inspectors based on standard accreditations (ASME,
                                 API, ISO), scheduling equipment testing with live status tracking.
                             </p>
@@ -281,8 +307,9 @@
                             <i class="fa-solid fa-mobile-screen"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-base text-white">Mobile Inspector App</h4>
-                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                            <h4 class="font-bold text-base text-white" data-i18n="erp_f2_title">Mobile Inspector App
+                            </h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="erp_f2_desc">
                                 Field engineers record equipment test measurements, upload photographic proof, log NDT
                                 readings, and issue digital site stickers directly from smartphones or tablets.
                             </p>
@@ -296,8 +323,9 @@
                             <i class="fa-solid fa-graduation-cap"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-base text-white">Training & Operator Certification Hub</h4>
-                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                            <h4 class="font-bold text-base text-white" data-i18n="erp_f3_title">Training & Operator
+                                Certification Hub</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="erp_f3_desc">
                                 Centralized management of operator assessments, rigger/crane operator card issuance,
                                 training renewals, and candidate competency tracking.
                             </p>
@@ -311,8 +339,9 @@
                             <i class="fa-solid fa-qrcode"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-base text-white">Instant QR Code Verification Portal</h4>
-                            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                            <h4 class="font-bold text-base text-white" data-i18n="erp_f4_title">Instant QR Code
+                                Verification Portal</h4>
+                            <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-i18n="erp_f4_desc">
                                 Every certificate and ID card generated features a unique QR code linked to our ERP
                                 server, allowing site safety officers to instantly verify authenticity.
                             </p>
@@ -339,7 +368,8 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-stellar-navy-800 p-3 rounded-xl border border-stellar-navy-700">
                             <div class="text-[11px] font-bold text-stellar-blue-300 mb-2 flex items-center gap-1.5">
-                                <i class="fa-solid fa-tablet-screen-button"></i> Mobile Inspector Interface
+                                <i class="fa-solid fa-tablet-screen-button"></i> <span data-i18n="mock_app">Mobile
+                                    Inspector Interface</span>
                             </div>
                             <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
                                 alt="Inspector Mobile App" class="rounded-lg w-full h-28 object-cover" />
@@ -347,7 +377,8 @@
 
                         <div class="bg-stellar-navy-800 p-3 rounded-xl border border-stellar-navy-700">
                             <div class="text-[11px] font-bold text-stellar-blue-300 mb-2 flex items-center gap-1.5">
-                                <i class="fa-solid fa-certificate"></i> Digital Certificate Generator
+                                <i class="fa-solid fa-certificate"></i> <span data-i18n="mock_cert">Digital Certificate
+                                    Generator</span>
                             </div>
                             <div
                                 class="bg-slate-900 p-2.5 rounded border border-slate-700 text-[10px] font-mono text-slate-300 space-y-1">
@@ -366,88 +397,89 @@
     <!-- Certificates & Accredited Standards Glimpse -->
     <section id="certificates" class="py-20 max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider">Global Standards</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1">Accreditations & Certification
-                Glimpse</h2>
-            <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Operating under strictly audited international quality,
-                training, and calibration benchmarks.</p>
+            <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider" data-i18n="cert_tag">Global
+                Standards</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1" data-i18n="cert_title">
+                Accreditations & Certification Glimpse</h2>
+            <p class="text-slate-600 mt-2 max-w-2xl mx-auto" data-i18n="cert_desc">Operating under strictly audited
+                international quality, training, and calibration benchmarks.</p>
         </div>
 
-        <!-- Certificate Mockups Grid -->
+        <!-- Certificate Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-
-            <!-- ISO 17020 Badge / Certificate Card -->
             <div
                 class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-stellar-blue-500 transition">
                 <div
                     class="w-12 h-12 bg-stellar-blue-100 text-stellar-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
                     <i class="fa-solid fa-award"></i>
                 </div>
-                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block">Inspection
-                    Authority</span>
+                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block"
+                    data-i18n="c1_sub">Inspection Authority</span>
                 <h3 class="text-lg font-bold text-stellar-navy-950 mb-2">ISO/IEC 17020 Accredited</h3>
-                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                <p class="text-xs text-slate-600 leading-relaxed mb-4" data-i18n="c1_desc">
                     Recognized Type-A Inspection Body authorization for third-party examination of cranes, lifting
                     equipment, pressure vessels, and heavy machinery.
                 </p>
                 <div
                     class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
                     <span>ERP Audit ID: ISO-17020</span>
-                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> <span
+                            data-i18n="verified">Verified</span></span>
                 </div>
             </div>
 
-            <!-- ISO 17025 Badge / Certificate Card -->
             <div
                 class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-stellar-blue-500 transition">
                 <div
                     class="w-12 h-12 bg-stellar-blue-100 text-stellar-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
                     <i class="fa-solid fa-gauge-high"></i>
                 </div>
-                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block">Testing &
-                    Calibration</span>
+                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block"
+                    data-i18n="c2_sub">Testing & Calibration</span>
                 <h3 class="text-lg font-bold text-stellar-navy-950 mb-2">ISO/IEC 17025 Accredited</h3>
-                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                <p class="text-xs text-slate-600 leading-relaxed mb-4" data-i18n="c2_desc">
                     International accreditation for calibration laboratories covering pressure, electrical, mechanical,
                     and torque measurement instruments.
                 </p>
                 <div
                     class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
                     <span>ERP Audit ID: ISO-17025</span>
-                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> <span
+                            data-i18n="verified">Verified</span></span>
                 </div>
             </div>
 
-            <!-- ISO 17024 Badge / Certificate Card -->
             <div
                 class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-stellar-blue-500 transition">
                 <div
                     class="w-12 h-12 bg-stellar-blue-100 text-stellar-blue-600 rounded-lg flex items-center justify-center font-bold text-xl mb-4">
                     <i class="fa-solid fa-user-check"></i>
                 </div>
-                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block">Personnel
-                    Certification</span>
+                <span class="text-[10px] font-bold text-stellar-blue-500 uppercase tracking-wider block"
+                    data-i18n="c3_sub">Personnel Certification</span>
                 <h3 class="text-lg font-bold text-stellar-navy-950 mb-2">ISO/IEC 17024 Accredited</h3>
-                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                <p class="text-xs text-slate-600 leading-relaxed mb-4" data-i18n="c3_desc">
                     Certified personnel body validating crane operators, riggers, scaffolders, and safety supervisors
                     across industrial sites.
                 </p>
                 <div
                     class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
                     <span>ERP Audit ID: ISO-17024</span>
-                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> <span
+                            data-i18n="verified">Verified</span></span>
                 </div>
             </div>
         </div>
 
-        <!-- Certificate Visual Mockup Bar -->
+        <!-- Certificate Visual Bar -->
         <div
             class="bg-slate-100 p-8 rounded-2xl border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="space-y-2">
-                <span class="bg-stellar-blue-500 text-white text-[10px] font-bold px-2.5 py-1 rounded">E-CERTIFICATE
-                    FEATURE</span>
-                <h4 class="text-xl font-bold text-stellar-navy-950">Automated Digital Inspection Certificates</h4>
-                <p class="text-xs text-slate-600 max-w-xl leading-relaxed">
+                <span class="bg-stellar-blue-500 text-white text-[10px] font-bold px-2.5 py-1 rounded"
+                    data-i18n="cert_bar_tag">E-CERTIFICATE FEATURE</span>
+                <h4 class="text-xl font-bold text-stellar-navy-950" data-i18n="cert_bar_title">Automated Digital
+                    Inspection Certificates</h4>
+                <p class="text-xs text-slate-600 max-w-xl leading-relaxed" data-i18n="cert_bar_desc">
                     All issued documents are generated directly through our internal ERP with tamper-evident digital
                     signatures, asset parameters, test loads, and instant QR verification.
                 </p>
@@ -455,7 +487,8 @@
             <div class="flex items-center gap-3 shrink-0">
                 <div class="bg-white p-3 rounded-lg border border-slate-300 text-center shadow-sm">
                     <i class="fa-solid fa-qrcode text-4xl text-slate-800"></i>
-                    <span class="text-[9px] font-bold text-slate-500 block mt-1">Scan to Verify</span>
+                    <span class="text-[9px] font-bold text-slate-500 block mt-1" data-i18n="qr_text">Scan to
+                        Verify</span>
                 </div>
             </div>
         </div>
@@ -465,30 +498,31 @@
     <section id="services" class="py-20 bg-slate-100 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider">Comprehensive
-                    Solutions</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1">Services & Capabilities</h2>
-                <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Select a category below to explore our certified
-                    technical and testing solutions.</p>
+                <span class="text-stellar-blue-500 font-bold uppercase text-xs tracking-wider"
+                    data-i18n="services_tag">Comprehensive Solutions</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-stellar-navy-950 mt-1" data-i18n="services_title">
+                    Services & Capabilities</h2>
+                <p class="text-slate-600 mt-2 max-w-2xl mx-auto" data-i18n="services_desc">Select a category below to
+                    explore our certified technical and testing solutions.</p>
             </div>
 
             <!-- Tab Navigation -->
             <div class="flex flex-wrap justify-center gap-2 mb-10" id="serviceTabs">
                 <button onclick="switchTab('inspection')" id="tab-inspection"
                     class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-stellar-navy-900 text-stellar-blue-300 shadow">
-                    1. Equipment Inspection
+                    1. <span data-i18n="tab_1">Equipment Inspection</span>
                 </button>
                 <button onclick="switchTab('testing')" id="tab-testing"
                     class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200">
-                    2. NDT & Load Testing
+                    2. <span data-i18n="tab_2">NDT & Load Testing</span>
                 </button>
                 <button onclick="switchTab('calibration')" id="tab-calibration"
                     class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200">
-                    3. Calibration (ISO 17025)
+                    3. <span data-i18n="tab_3">Calibration (ISO 17025)</span>
                 </button>
                 <button onclick="switchTab('training')" id="tab-training"
                     class="px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-white text-slate-700 hover:bg-slate-200">
-                    4. Training & Personnel
+                    4. <span data-i18n="tab_4">Training & Personnel</span>
                 </button>
             </div>
 
@@ -497,7 +531,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <h4
                         class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
-                        Cranes & Lifting <i class="fa-solid fa-dharmachakra"></i>
+                        <span data-i18n="s1">Cranes & Lifting</span> <i class="fa-solid fa-dharmachakra"></i>
                     </h4>
                     <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
                         <li>• Mobile Crane</li>
@@ -515,7 +549,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <h4
                         class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
-                        Earth Moving <i class="fa-solid fa-trowel-bricks"></i>
+                        <span data-i18n="s2">Earth Moving</span> <i class="fa-solid fa-trowel-bricks"></i>
                     </h4>
                     <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
                         <li>• Wheel Loader</li>
@@ -531,7 +565,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <h4
                         class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
-                        MEWPs & Material Handling <i class="fa-solid fa-elevator"></i>
+                        <span data-i18n="s3">MEWPs & Material Handling</span> <i class="fa-solid fa-elevator"></i>
                     </h4>
                     <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
                         <li>• Man / Scissor Lift</li>
@@ -545,7 +579,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <h4
                         class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
-                        Lifting Gears & PPE <i class="fa-solid fa-link"></i>
+                        <span data-i18n="s4">Lifting Gears & PPE</span> <i class="fa-solid fa-link"></i>
                     </h4>
                     <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
                         <li>• Wire Rope Slings</li>
@@ -559,7 +593,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <h4
                         class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
-                        Construction Plant <i class="fa-solid fa-gears"></i>
+                        <span data-i18n="s5">Construction Plant</span> <i class="fa-solid fa-gears"></i>
                     </h4>
                     <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
                         <li>• Generators</li>
@@ -573,7 +607,7 @@
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                     <h4
                         class="font-bold text-stellar-navy-950 border-b pb-2 mb-3 text-sm text-stellar-blue-500 flex justify-between">
-                        Transport & Hoists <i class="fa-solid fa-truck"></i>
+                        <span data-i18n="s6">Transport & Hoists</span> <i class="fa-solid fa-truck"></i>
                     </h4>
                     <ul class="text-xs text-slate-600 space-y-1.5 grid grid-cols-2 gap-x-2">
                         <li>• Prime Movers</li>
@@ -620,7 +654,7 @@
                 class="service-content hidden bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
                 <div class="mb-6">
                     <h4 class="font-bold text-stellar-navy-950 text-base text-stellar-blue-500 mb-1">
-                        <i class="fa-solid fa-gauge-high text-stellar-blue-400 mr-2"></i> ISO/IEC 17025 Accredited
+                        <i class="fa-solid fa-gauge-high text-stellar-blue-400 mr-2 ml-2"></i> ISO/IEC 17025 Accredited
                         Calibration Services
                     </h4>
                     <p class="text-xs text-slate-500">Ensuring precise instrument readouts across electrical, pressure,
@@ -643,8 +677,8 @@
                 class="service-content hidden bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
                 <div class="mb-6">
                     <h4 class="font-bold text-stellar-navy-950 text-base text-stellar-blue-500 mb-1">
-                        <i class="fa-solid fa-user-graduate text-stellar-blue-400 mr-2"></i> ISO/IEC 17024 Certified
-                        Training & Assessments
+                        <i class="fa-solid fa-user-graduate text-stellar-blue-400 mr-2 ml-2"></i> ISO/IEC 17024
+                        Certified Training & Assessments
                     </h4>
                     <p class="text-xs text-slate-500">Empowering workforce competency with accredited safety
                         certifications.</p>
@@ -676,107 +710,117 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with Direct Email Trigger -->
     <section id="contact" class="py-20 bg-stellar-navy-950 text-white">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-                <span class="text-stellar-blue-300 font-bold uppercase text-xs tracking-wider">Contact Us</span>
-                <h2 class="text-3xl font-extrabold mt-1 mb-6">Request Inspection & Technical Quotes</h2>
-                <p class="text-slate-300 text-sm mb-8 leading-relaxed">
+                <span class="text-stellar-blue-300 font-bold uppercase text-xs tracking-wider"
+                    data-i18n="contact_tag">Contact Us</span>
+                <h2 class="text-3xl font-extrabold mt-1 mb-6" data-i18n="contact_title">Request Inspection & Technical
+                    Quotes</h2>
+                <p class="text-slate-300 text-sm mb-8 leading-relaxed" data-i18n="contact_desc">
                     Get in touch with our certified engineering specialists in Oman for inquiries, calibration
                     schedules, or training proposals.
                 </p>
 
                 <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
+                    <div class="flex items-start space-x-4 space-x-reverse">
                         <div
                             class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm text-white">Phone Support</h4>
+                            <h4 class="font-bold text-sm text-white" data-i18n="c_phone">Phone Support</h4>
                             <p class="text-slate-300 text-sm">+968 9793 3096 / +968 9678 2458</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
+                    <div class="flex items-start space-x-4 space-x-reverse">
                         <div
                             class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm text-white">Direct Email</h4>
+                            <h4 class="font-bold text-sm text-white" data-i18n="c_email">Direct Email</h4>
                             <p class="text-slate-300 text-sm">contact-us@stellartech-services.com</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
+                    <div class="flex items-start space-x-4 space-x-reverse">
                         <div
                             class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
                             <i class="fa-solid fa-globe"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm text-white">Website</h4>
+                            <h4 class="font-bold text-sm text-white" data-i18n="c_web">Website</h4>
                             <p class="text-slate-300 text-sm">www.stellartech-services.com</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
+                    <div class="flex items-start space-x-4 space-x-reverse">
                         <div
                             class="w-10 h-10 bg-stellar-navy-900 border border-stellar-blue-500/30 text-stellar-blue-300 rounded-lg flex items-center justify-center font-bold">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm text-white">Head Office</h4>
-                            <p class="text-slate-300 text-sm">Sultanate of Oman</p>
+                            <h4 class="font-bold text-sm text-white" data-i18n="c_office">Head Office</h4>
+                            <p class="text-slate-300 text-sm" data-i18n="location">Muscat, Sultanate of Oman</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Quote Request Form -->
+            <!-- Quote Request Form triggering mailto: -->
             <div class="bg-stellar-navy-900 p-8 rounded-xl border border-stellar-navy-800 shadow-xl">
-                <h3 class="text-xl font-bold text-white mb-6">Schedule Service</h3>
-                <form class="space-y-4 text-slate-800">
+                <h3 class="text-xl font-bold text-white mb-6" data-i18n="form_head">Schedule Service</h3>
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4 text-slate-800">
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Company Name</label>
-                        <input type="text"
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1"
+                            data-i18n="f_company">Company Name</label>
+                        <input type="text" id="formCompany" required
                             class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
                             placeholder="e.g. Oman Construction Company" />
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Contact Person</label>
-                            <input type="text"
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1"
+                                data-i18n="f_name">Contact Person</label>
+                            <input type="text" id="formName" required
                                 class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
                                 placeholder="Full Name" />
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Phone</label>
-                            <input type="tel"
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1"
+                                data-i18n="f_phone">Phone</label>
+                            <input type="tel" id="formPhone" required
                                 class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
                                 placeholder="+968 ..." />
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Service Required</label>
-                        <select
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1"
+                            data-i18n="f_service">Service Required</label>
+                        <select id="formService"
                             class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500 text-slate-700">
-                            <option>Equipment Inspection (Cranes / MEWPs / Earthmoving)</option>
-                            <option>NDT & Load Testing (MPI / DPT)</option>
-                            <option>Instrument Calibration (ISO 17025)</option>
-                            <option>Training & Operator Certification (ISO 17024)</option>
+                            <option value="Equipment Inspection">Equipment Inspection (Cranes / MEWPs / Earthmoving)
+                            </option>
+                            <option value="NDT & Load Testing">NDT & Load Testing (MPI / DPT)</option>
+                            <option value="Instrument Calibration">Instrument Calibration (ISO 17025)</option>
+                            <option value="Training & Operator Certification">Training & Operator Certification (ISO
+                                17024)</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Details / Scope</label>
-                        <textarea rows="3"
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-1"
+                            data-i18n="f_details">Details / Scope</label>
+                        <textarea id="formDetails" rows="3"
                             class="w-full bg-slate-50 border border-slate-300 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-stellar-blue-500"
                             placeholder="Specify machinery quantities or location..."></textarea>
                     </div>
                     <button type="submit"
-                        class="w-full bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white font-extrabold py-3 rounded text-sm transition shadow-md">
-                        Submit Request
+                        class="w-full bg-stellar-blue-500 hover:bg-stellar-blue-600 text-white font-extrabold py-3 rounded text-sm transition shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i> <span data-i18n="f_submit">Submit Request Via
+                            Email</span>
                     </button>
                 </form>
             </div>
@@ -787,24 +831,250 @@
     <footer class="bg-black text-slate-400 py-12 text-xs border-t border-stellar-navy-800">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-4">
+                <!-- <img src="./Images/Logo.jpg" alt="Stellar Logo" class="h-10 w-auto bg-white p-1 rounded"> -->
                 <div>
                     <span class="text-white font-bold text-sm block">Stellar Technical Services</span>
-                    <p class="text-slate-500">Sultanate of Oman &bull; ISO/IEC 17020, 17024, 17025 Accredited</p>
+                    <!-- <p class="text-slate-500" data-i18n="footer_sub">Sultanate of Oman &bull; ISO/IEC 17020, 17024,
+                        17025 Accredited</p> -->
                 </div>
             </div>
-            <div class="flex space-x-6 text-slate-400">
-                <a href="#home" class="hover:text-stellar-blue-300">Home</a>
-                <a href="#about" class="hover:text-stellar-blue-300">About</a>
-                <a href="#erp-system" class="hover:text-stellar-blue-300">ERP Platform</a>
-                <a href="#services" class="hover:text-stellar-blue-300">Services</a>
-                <a href="#contact" class="hover:text-stellar-blue-300">Contact</a>
+            <div class="flex space-x-6 space-x-reverse text-slate-400">
+                <a href="#home" class="hover:text-stellar-blue-300" data-i18n="nav_home">Home</a>
+                <a href="#about" class="hover:text-stellar-blue-300" data-i18n="nav_about">About</a>
+                <a href="#erp-system" class="hover:text-stellar-blue-300" data-i18n="nav_erp">ERP Platform</a>
+                <a href="#services" class="hover:text-stellar-blue-300" data-i18n="nav_services">Services</a>
+                <a href="#contact" class="hover:text-stellar-blue-300" data-i18n="nav_contact">Contact</a>
             </div>
             <p>&copy; 2026 Stellar Technical Services. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Simple JS Script for Interactive Tab Switching -->
+    <!-- Translation & Form Action Logic -->
     <script>
+        const translations = {
+            en: {
+                location: "Muscat, Sultanate of Oman",
+                accreditation_bar: "ISO/IEC 17020 | 17024 | 17025 Accredited",
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_services: "Services",
+                nav_erp: "Digital ERP & App",
+                nav_accred: "Accreditations",
+                nav_contact: "Contact",
+                btn_book: "Book Inspection",
+                hero_badge: "Oman's Premier TPI, Testing & Calibration Authority",
+                hero_title: "Precision Engineering. Unwavering Safety & Compliance.",
+                hero_sub: "Delivering third-party inspection, NDT, precision calibration, and training certifications managed digitally via our integrated ERP & Mobile Field App.",
+                btn_explore: "Explore Capabilities",
+                btn_erp: "ERP & Mobile App Glimpse",
+                badge_inspect: "Inspect",
+                badge_certified: "Certified",
+                badge_compliance: "Compliance",
+                stat_tests: "Tests Completed",
+                stat_inspections: "Inspections Delivered",
+                stat_certified: "Personnel Certified",
+                stat_calibrated: "Instruments Calibrated",
+                about_tag: "Corporate Profile",
+                about_title: "About Stellar Technical Services",
+                about_desc: "Founded on integrity, expertise, and efficiency across energy, manufacturing, and construction sectors in Oman.",
+                about_h1: "Enterprise Quality & Verification",
+                about_p1: "Stellar Technical Services is a dynamic third-party inspection agency with a proven track record in Oman. From manufacturing hubs and construction sites to energy plants, we bring seasoned engineering professionals dedicated to safeguarding your operational assets.",
+                about_p2: "In an industry where safety and regulatory compliance are non-negotiable, Stellar stands as your trusted partner, delivering real-time inspection updates backed by automated digital reporting.",
+                mission_title: "Our Mission",
+                mission_desc: "To empower clients with thorough assessments and rapid digital reporting, ensuring operations continuously surpass safety benchmarks.",
+                vision_title: "Our Vision",
+                vision_desc: "To remain Oman's foremost market leader for third-party inspection, NDT, certification, and calibration through digitised excellence.",
+                ceo_badge: "Executive Leadership",
+                ceo_name: "Eng. Tariq Al-Busaidi",
+                ceo_role: "Chief Executive Officer",
+                ceo_q1: "\"Dear Valued Clients and Industry Partners,",
+                ceo_q2: "At Stellar Technical Services, our commitment to accuracy, integrity, and innovation forms the bedrock of our business. We understand the critical nature of reliable third-party assessments across the Sultanate.",
+                ceo_q3: "Through our proprietary Enterprise ERP and Mobile Field Application, we ensure seamless scheduling, instant field inspection logging, and tamper-proof digital certificates with instant QR verification.\"",
+                ceo_footer: "Quality • Safety • Digital Innovation",
+                ceo_sign: "Stellar Leadership",
+                erp_tag: "Smart Infrastructure",
+                erp_title: "Internal ERP System & Mobile App",
+                erp_desc: "Our operations are powered by a custom-built Enterprise Resource Planning (ERP) platform and Inspector Mobile App, connecting field engineers, project managers, and clients in real time.",
+                erp_f1_title: "Project Management & Job Dispatch",
+                erp_f1_desc: "Automated assignment of qualified inspectors based on standard accreditations (ASME, API, ISO), scheduling equipment testing with live status tracking.",
+                erp_f2_title: "Mobile Inspector App",
+                erp_f2_desc: "Field engineers record equipment test measurements, upload photographic proof, log NDT readings, and issue digital site stickers directly from smartphones or tablets.",
+                erp_f3_title: "Training & Operator Certification Hub",
+                erp_f3_desc: "Centralized management of operator assessments, rigger/crane operator card issuance, training renewals, and candidate competency tracking.",
+                erp_f4_title: "Instant QR Code Verification Portal",
+                erp_f4_desc: "Every certificate and ID card generated features a unique QR code linked to our ERP server, allowing site safety officers to instantly verify authenticity.",
+                mock_app: "Mobile Inspector Interface",
+                mock_cert: "Digital Certificate Generator",
+                cert_tag: "Global Standards",
+                cert_title: "Accreditations & Certification Glimpse",
+                cert_desc: "Operating under strictly audited international quality, training, and calibration benchmarks.",
+                c1_sub: "Inspection Authority",
+                c1_desc: "Recognized Type-A Inspection Body authorization for third-party examination of cranes, lifting equipment, pressure vessels, and heavy machinery.",
+                c2_sub: "Testing & Calibration",
+                c2_desc: "International accreditation for calibration laboratories covering pressure, electrical, mechanical, and torque measurement instruments.",
+                c3_sub: "Personnel Certification",
+                c3_desc: "Certified personnel body validating crane operators, riggers, scaffolders, and safety supervisors across industrial sites.",
+                verified: "Verified",
+                cert_bar_tag: "E-CERTIFICATE FEATURE",
+                cert_bar_title: "Automated Digital Inspection Certificates",
+                cert_bar_desc: "All issued documents are generated directly through our internal ERP with tamper-evident digital signatures, asset parameters, test loads, and instant QR verification.",
+                qr_text: "Scan to Verify",
+                services_tag: "Comprehensive Solutions",
+                services_title: "Services & Capabilities",
+                services_desc: "Select a category below to explore our certified technical and testing solutions.",
+                tab_1: "Equipment Inspection",
+                tab_2: "NDT & Load Testing",
+                tab_3: "Calibration (ISO 17025)",
+                tab_4: "Training & Personnel",
+                s1: "Cranes & Lifting",
+                s2: "Earth Moving",
+                s3: "MEWPs & Material Handling",
+                s4: "Lifting Gears & PPE",
+                s5: "Construction Plant",
+                s6: "Transport & Hoists",
+                contact_tag: "Contact Us",
+                contact_title: "Request Inspection & Technical Quotes",
+                contact_desc: "Get in touch with our certified engineering specialists in Oman for inquiries, calibration schedules, or training proposals.",
+                c_phone: "Phone Support",
+                c_email: "Direct Email",
+                c_web: "Website",
+                c_office: "Head Office",
+                form_head: "Schedule Service",
+                f_company: "Company Name",
+                f_name: "Contact Person",
+                f_phone: "Phone",
+                f_service: "Service Required",
+                f_details: "Details / Scope",
+                f_submit: "Submit Request Via Email",
+                footer_sub: "Sultanate of Oman • ISO/IEC 17020, 17024, 17025 Accredited"
+            },
+            ar: {
+                location: "مسقط، سلطنة عمان",
+                accreditation_bar: "معتمد وفق ISO/IEC 17020 | 17024 | 17025",
+                nav_home: "الرئيسية",
+                nav_about: "من نحن",
+                nav_services: "الخدمات",
+                nav_erp: "نظام ERP والتطبيق",
+                nav_accred: "الاعتمادات",
+                nav_contact: "اتصل بنا",
+                btn_book: "حجز فحص",
+                hero_badge: "الجهة الرائدة للفحص والتعديل والمعايرة في عمان",
+                hero_title: "الهندسة الدقيقة. السلامة والامتثال المطلق.",
+                hero_sub: "تقديم خدمات الفحص من الطرف الثالث، الاختبارات غير التدميرية، المعايرة الدقيقة، وشهادات التدريب المدارة رقمياً عبر نظام ERP والتطبيق الميداني.",
+                btn_explore: "استكشف خدماتنا",
+                btn_erp: "لمحة عن نظام ERP",
+                badge_inspect: "فحص دقيق",
+                badge_certified: "شهادات معتمدة",
+                badge_compliance: "امتثال شامل",
+                stat_tests: "اختبار مكتمل",
+                stat_inspections: "عملية فحص منجزة",
+                stat_certified: "شخص مؤهل ومُعتمد",
+                stat_calibrated: "جهاز تم معايرته",
+                about_tag: "الملف المؤسسي",
+                about_title: "عن ستيلار للخدمات الفنية",
+                about_desc: "تأسست على النزاهة والخبرة والكفاءة عبر قطاعات الطاقة والتصنيع والإنشاءات في عمان.",
+                about_h1: "جودة المؤسسة والتحقق الرقمي",
+                about_p1: "ستيلار للخدمات الفنية هي وكالة فحص طرف ثالث ديناميكية ولها سجل حافل بالنجاحات في سلطنة عمان. من المراكز الصناعية ومواقع البناء إلى محطات الطاقة، نقدم مهندسين متخصصين لحماية أصولك التشغيلية.",
+                about_p2: "في قطاع تعد فيه السلامة والامتثال التنظيمي أمراً لا يقبل المساومة، تقف ستيلار كشريكك الموثوق، حيث تقدم تحديثات الفحص الفورية المدعومة بالتقارير الرقمية الآلية.",
+                mission_title: "رسالتنا",
+                mission_desc: "تمكين العملاء من خلال التقييمات الشاملة والتقارير الرقمية السريعة لضمان تجاوز العمليات لمعايير السلامة باستمرار.",
+                vision_title: "رؤيتنا",
+                vision_desc: "أن نكون الرائدين في عمان لخدمات الفحص من الطرف الثالث والاختبار والمعايرة من خلال التميز الرقمي.",
+                ceo_badge: "الإدارة التنفيذية",
+                ceo_name: "المهندس طارق البوسعيدي",
+                ceo_role: "الرئيس التنفيذي",
+                ceo_q1: "\"عزائي العملاء والشركاء الكرام،",
+                ceo_q2: "في ستيلار للخدمات الفنية، يشكل التزامنا بالدقة والنزاهة والابتكار حجر الزاوية لأعمالنا. نحن ندرك الأهمية الحيوية للتقييمات الموثوقة في جميع أنحاء السلطنة.",
+                ceo_q3: "من خلال نظام ERP الخاص بنا وتطبيق الفحص الميداني، نضمن جدولة سلسة وتسجيل فوريا للفحوصات وشهادات رقمية آمنة مزودة بالتحقق السريع عبر رمز QR.\"",
+                ceo_footer: "الجودة • السلامة • الابتكار الرقمي",
+                ceo_sign: "إدارة ستيلار",
+                erp_tag: "البنية التحتية الذكية",
+                erp_title: "نظام ERP الداخلي وتطبيق الهاتف",
+                erp_desc: "تدار عملياتنا بواسطة منصة تخطيط موارد المؤسسات (ERP) وتطبيق المفتش الذكي، مما يربط المهندسين الميدانيين ومديري المشاريع والعملاء في الوقت الفعلي.",
+                erp_f1_title: "إدارة المشاريع وتوزيع المهام",
+                erp_f1_desc: "تعيين آلي للمفتشين المؤهلين بناءً على الاعتمادات القياسية (ASME, API, ISO) وتتبع حالة الاختبارات مباشرة.",
+                erp_f2_title: "تطبيق المفتش الميداني",
+                erp_f2_desc: "يسجل المهندسون قراءات الاختبارات، ويحملون الصور والبيانات، ويصدرون الملصقات الرقمية مباشرة من هواتفهم.",
+                erp_f3_title: "مركز تدريب واعتماد المشغلين",
+                erp_f3_desc: "إدارة مركزية لتقييمات المشغلين، إصدار بطاقات الرافعات، تجديد التدريب، وتتبع كفاءة المرشحين.",
+                erp_f4_title: "بوابة التحقق الفوري عبر رمز QR",
+                erp_f4_desc: "تحتوي كل شهادة أو بطاقة صادرة على رمز QR فريد مرتبط بسيرفر ERP الخاص بنا لتمكين ضباط السلامة من التحقق الفوري.",
+                mock_app: "واجهة تطبيق المفتش",
+                mock_cert: "مولد الشهادات الرقمية",
+                cert_tag: "المعايير العالمية",
+                cert_title: "لمحة عن الاعتمادات والشهادات",
+                cert_desc: "نعمل تحت معايير عالمية مدققة للجودة والتدريب والمعايرة.",
+                c1_sub: "سلطة الفحص",
+                c1_desc: "جهة فحص معتمدة من الفئة (A) للرافعات، معدات الرفع، أوعية الضغط، والمعدات الثقيلة.",
+                c2_sub: "الاختبار والمعايرة",
+                c2_desc: "اعتماد دولي لمختبرات المعايرة التي تغطي أجهزة قياس الضغط والكهرباء والميكانيكا.",
+                c3_sub: "اعتماد الأفراد",
+                c3_desc: "جهة معتمدة لتقييم واعتماد مشغلي الرافعات، مشغلي السقالات، ومصممي خطط الرفع.",
+                verified: "مُعتمد",
+                cert_bar_tag: "ميزة الشهادات الرقمية",
+                cert_bar_title: "شهادات الفحص الرقمية الآلية",
+                cert_bar_desc: "جميع المستندات الصادرة يتم إنشاؤها مباشرة عبر نظام ERP مع توقيعات رقمية آمنة ورمز QR فوري.",
+                qr_text: "امسح للتحقق",
+                services_tag: "حلول شاملة",
+                services_title: "الخدمات والإمكانيات",
+                services_desc: "اختر فئة من الأسفل لاستكشاف خدماتنا الفنية المعتمدة.",
+                tab_1: "فحص المعدات",
+                tab_2: "الاختبارات غير التدميرية",
+                tab_3: "المعايرة (ISO 17025)",
+                tab_4: "التدريب واعتماد الكوادر",
+                s1: "الرافعات ومعدات الرفع",
+                s2: "معدات تحريك التربة",
+                s3: "منصات العمل ومناولات المواد",
+                s4: "ملحقات الرفع ومعدات الوقاية",
+                s5: "معدات البناء والإنشاء",
+                s6: "وسائل النقل والمصاعد",
+                contact_tag: "تواصل معنا",
+                contact_title: "طلب فحص وعروض أسعار",
+                contact_desc: "تواصل مع مهندسينا المعتمدين في سلطنة عمان للاستفسارات، جدولة المعايرة، أو عروض التدريب.",
+                c_phone: "الدعم الهاتفى",
+                c_email: "البريد الإلكتروني",
+                c_web: "الموقع الإلكتروني",
+                c_office: "المقر الرئيسي",
+                form_head: "جدولة خدمة",
+                f_company: "اسم الشركة",
+                f_name: "الشخص المسؤول",
+                f_phone: "رقم الهاتف",
+                f_service: "الخدمة المطلوبة",
+                f_details: "التفاصيل / النطاق",
+                f_submit: "إرسال الطلب عبر البريد الإلكتروني",
+                footer_sub: "سلطنة عمان • معتمد وفق ISO/IEC 17020, 17024, 17025"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const htmlEl = document.documentElement;
+
+            // Toggle RTL / LTR and font family
+            if (currentLang === 'ar') {
+                htmlEl.setAttribute('dir', 'rtl');
+                htmlEl.setAttribute('lang', 'ar');
+                document.body.classList.add('font-cairo');
+                document.getElementById('langBtnText').innerText = 'English';
+            } else {
+                htmlEl.setAttribute('dir', 'ltr');
+                htmlEl.setAttribute('lang', 'en');
+                document.body.classList.remove('font-cairo');
+                document.getElementById('langBtnText').innerText = 'العربية';
+            }
+
+            // Update all data-i18n elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+        }
+
+        // Interactive Tab Switching
         function switchTab(tabKey) {
             document.querySelectorAll('.service-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('#serviceTabs button').forEach(btn => {
@@ -813,6 +1083,33 @@
             document.getElementById('content-' + tabKey).classList.remove('hidden');
             const activeBtn = document.getElementById('tab-' + tabKey);
             activeBtn.className = 'px-5 py-2.5 rounded-md font-bold text-xs uppercase tracking-wider transition bg-stellar-navy-900 text-stellar-blue-300 shadow';
+        }
+
+        // Form Submit Direct Email Trigger
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const company = document.getElementById('formCompany').value;
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const service = document.getElementById('formService').value;
+            const details = document.getElementById('formDetails').value;
+
+            const recipient = "contact-us@stellartech-services.com";
+            const subject = encodeURIComponent(`Inspection Request - ${company} (${name})`);
+            const body = encodeURIComponent(
+                `Hello Stellar Technical Services Team,\n\n` +
+                `I would like to request a service quotation with the following details:\n\n` +
+                `Company Name: ${company}\n` +
+                `Contact Person: ${name}\n` +
+                `Phone Number: ${phone}\n` +
+                `Service Required: ${service}\n` +
+                `Details / Scope:\n${details}\n\n` +
+                `Best regards,\n${name}`
+            );
+
+            // Open user's email client
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
         }
     </script>
 </body>
