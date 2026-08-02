@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
+import ceoImg from '../../assets/OzaiBf.png';
 
 export const CeoMessage = () => {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export const CeoMessage = () => {
       <div>
         <div className="flex items-center gap-5 mb-6">
           <img
-            src="/Images/OzaiBf.png"
+            src={ceoImg}
             alt="CEO - Stellar Technical Services"
             className="w-20 h-20 rounded-full object-cover border-2 border-stellar-blue-500 shadow-md"
           />
