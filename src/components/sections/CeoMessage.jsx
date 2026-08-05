@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import ceoImg from '../../../public/images/OzaiBf.png';
+const ceoImg = '/Images/OzaiBf.png'; // using logo as placeholder image
 
 export const CeoMessage = () => {
   const { t } = useLanguage();
