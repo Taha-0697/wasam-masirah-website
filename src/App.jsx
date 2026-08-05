@@ -13,6 +13,8 @@ import { MachineryInspectionSimulator } from './components/sections/MachineryIns
 import { ErpVisualMockups } from './components/sections/ErpVisualMockups';
 import { AccreditationsList } from './components/sections/AccreditationsList';
 import { EcertificateBar } from './components/sections/EcertificateBar';
+import { VerificationResult } from './components/sections/VerificationResult';
+import { useLocation } from 'react-router-dom';
 import { ServicesTabNav } from './components/sections/ServicesTabNav';
 import { ServiceCategoryCard } from './components/sections/ServiceCategoryCard';
 import { ContactInfoCards } from './components/sections/ContactInfoCards';
@@ -22,7 +24,12 @@ import { useLanguage } from './context/LanguageContext';
 
 export function App() {
   const { t } = useLanguage();
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState('inspection');
+
+  if (location.pathname.startsWith('/verify')) {
+    return <VerificationResult />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 font-sans">
