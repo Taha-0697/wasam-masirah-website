@@ -1,6 +1,10 @@
 {
     "rewrites": [
         {
+            "source": "/apiCertificates/:path*",
+            "destination": "http://69.197.150.135/apiCertificates/:path*"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
