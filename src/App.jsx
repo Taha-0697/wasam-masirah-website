@@ -13,7 +13,8 @@ import { MachineryInspectionSimulator } from './components/sections/MachineryIns
 import { ErpVisualMockups } from './components/sections/ErpVisualMockups';
 import { AccreditationsList } from './components/sections/AccreditationsList';
 import { EcertificateBar } from './components/sections/EcertificateBar';
-import { VerificationResult } from './components/sections/VerificationResult';
+import { EquipmentVerification } from './components/sections/EquipmentVerification';
+import { TrainingVerification } from './components/sections/TrainingVerification';
 import { useLocation } from 'react-router-dom';
 import { ServicesTabNav } from './components/sections/ServicesTabNav';
 import { ServiceCategoryCard } from './components/sections/ServiceCategoryCard';
@@ -27,8 +28,11 @@ export function App() {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('inspection');
 
-  if (location.pathname.startsWith('/verify')) {
-    return <VerificationResult />;
+  if (location.pathname.startsWith('/equipment-verify')) {
+    return <EquipmentVerification />;
+  }
+  if (location.pathname.startsWith('/training-verify')) {
+    return <TrainingVerification />;
   }
 
   return (

@@ -1,4 +1,4 @@
-// src/components/sections/VerificationResult.jsx
+// src/components/sections/EquipmentVerification.jsx
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
@@ -56,7 +56,8 @@ function DetailRow({ label, value, copyable }) {
   );
 }
 
-export function VerificationResult() {
+export function EquipmentVerification() {
+  // Direct local backend per request
   const endpointApi = import.meta.env.VITE_API_URL;
   const { t } = useLanguage();
   const query = new URLSearchParams(useLocation().search);
@@ -97,14 +98,19 @@ export function VerificationResult() {
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-stellar-navy-950 via-stellar-navy-900 to-stellar-blue-700 px-6">
-      {/* Decorative background accents */}
+      {/* Decorative accents */}
       <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-stellar-blue-500/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-stellar-gold-500/10 blur-3xl" />
 
-      <div className="relative w-full max-w-4xl bg-white">
-        <Logo variant="header" className="mx-auto " />
+      <div className="relative w-full max-w-4xl bg-white p-8 rounded-2xl shadow-xl">
+        {/* Clickable logo that returns home */}
+        <div className="mb-6 flex justify-center">
+          <button onClick={() => navigate('/')} className="focus:outline-none">
+            <Logo variant="header" className="mx-auto" />
+          </button>
+        </div>
 
-        {/* Loading state */}
+        {/* Loading */}
         {loading && (
           <div className="rounded-2xl bg-white/95 p-12 text-center shadow-2xl backdrop-blur-lg">
             <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-4 border-stellar-blue-200 border-t-stellar-blue-600" />
@@ -112,7 +118,7 @@ export function VerificationResult() {
           </div>
         )}
 
-        {/* Error state */}
+        {/* Error */}
         {!loading && error && (
           <div className="rounded-2xl bg-white/95 p-10 text-center shadow-2xl backdrop-blur-lg animate-fade-in">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50 text-red-500">
@@ -131,41 +137,24 @@ export function VerificationResult() {
           </div>
         )}
 
-        {/* Result state */}
+        {/* Success / Result */}
         {!loading && !error && data && (
           <div className="overflow-hidden rounded-2xl bg-white/95 shadow-2xl backdrop-blur-lg animate-fade-in">
-            {/* Status header */}
-            <div
-              className={`flex items-center gap-4 px-8 py-6 ${isValid ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
-                }`}
-            >
+            <div className={`flex items-center gap-4 px-8 py-6 ${isValid ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
               <StatusIcon status={data.status} />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider opacity-70">
-                  Equipment Certificate Verification
-                </p>
-                <h2 className="text-2xl font-bold">
-                  {isValid ? 'Certificate Verified' : 'Certificate Invalid'}
-                </h2>
+                <p className="text-xs font-semibold uppercase tracking-wider opacity-70">Equipment Certificate Verification</p>
+                <h2 className="text-2xl font-bold">{isValid ? 'Certificate Verified' : 'Certificate Invalid'}</h2>
               </div>
             </div>
-
-            {/* Details */}
             <div className="p-8">
               <dl className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <DetailRow label="Certificate Number" value={data.certificateNumber} copyable />
                 <DetailRow label="Project Name" value={data.projectName} />
                 <DetailRow label="Equipment Name" value={data.equipmentName} />
-                <DetailRow
-                  label="Issue Date"
-                  value={data.issuedDate ? new Date(data.issuedDate).toLocaleDateString() : 'N/A'}
-                />
-                <DetailRow
-                  label="Expiry Date"
-                  value={data.expiryDate ? new Date(data.expiryDate).toLocaleDateString() : 'N/A'}
-                />
+                <DetailRow label="Issue Date" value={data.issuedDate ? new Date(data.issuedDate).toLocaleDateString() : 'N/A'} />
+                <DetailRow label="Expiry Date" value={data.expiryDate ? new Date(data.expiryDate).toLocaleDateString() : 'N/A'} />
               </dl>
-
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <button
                   onClick={() => navigate('/')}
@@ -176,10 +165,14 @@ export function VerificationResult() {
                   </svg>
                   Verify Another Certificate
                 </button>
+                <button
+                  onClick={() => navigate('/')}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-slate-600 px-4 py-2 font-medium text-white hover:bg-slate-500"
+                >
+                  Back to Home
+                </button>
               </div>
             </div>
-
-            {/* Footer strip */}
             <div className="border-t border-slate-100 bg-slate-50 px-8 py-3 text-center text-xs text-slate-400">
               This result was generated automatically and reflects the certificate status at time of verification.
             </div>

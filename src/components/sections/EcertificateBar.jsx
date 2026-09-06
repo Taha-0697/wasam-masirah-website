@@ -4,12 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 export const EcertificateBar = () => {
   const [certificate, setCertificate] = useState('');
+  const [certType, setCertType] = useState('equipment'); // 'equipment' or 'training'
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const encoded = encodeURIComponent(certificate.trim());
-    navigate(`/verify?CertificateNumber=${encoded}`);
+    if (certType === 'training') {
+      navigate(`/training-verify?TrainingCertificateNumber=${encoded}`);
+    } else {
+      navigate(`/equipment-verify?CertificateNumber=${encoded}`);
+    }
   };
 
   return (
@@ -31,10 +36,20 @@ export const EcertificateBar = () => {
           <span className="text-[10px] font-extrabold text-slate-700 block mt-1 uppercase tracking-wider">
             Digital Certificate Verification
           </span>
+          <div className="flex space-x-2 mb-2">
+            <select
+              value={certType}
+              onChange={(e) => setCertType(e.target.value)}
+              className="px-3 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-stellar-blue-400"
+            >
+              <option value="equipment">Equipment Certificate</option>
+              <option value="training">Training Certificate</option>
+            </select>
+          </div>
           <form onSubmit={handleSubmit} className="flex flex-col items-center mt-2 space-y-2">
             <input
               type="text"
-              placeholder="Certificate Number"
+              placeholder={certType === 'training' ? 'Training Certificate Number' : 'Certificate Number'}
               value={certificate}
               onChange={(e) => setCertificate(e.target.value)}
               className="px-4 py-2 w-64 rounded-md bg-slate-200 text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-stellar-blue-400"
