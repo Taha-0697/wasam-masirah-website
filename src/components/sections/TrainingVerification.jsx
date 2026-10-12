@@ -13,8 +13,20 @@ function DetailRow({ label, value }) {
   );
 }
 
+// Helper function to format dates as "10-Oct-2026"
+function formatDate(dateString) {
+  if (!dateString) return '—';
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return dateString;
+
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = date.toLocaleString('en-US', { month: 'short' });
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}
+
 export function TrainingVerification() {
-  // Directly use the local backend as requested
   const endpointApi = import.meta.env.VITE_API_URL;
   const { t } = useLanguage();
   const query = new URLSearchParams(useLocation().search);
@@ -40,8 +52,15 @@ export function TrainingVerification() {
           throw new Error(response.status === 404 ? 'Training certificate not found.' : `Request failed (${response.status})`);
         }
         const json = await response.json();
-        const { name, identityNo, position, company } = json.data || {};
-        setData({ name, identityNo, position, company });
+        const { name, identityNo, position, company, issuedDate, expiryDate } = json.data || {};
+        setData({
+          name,
+          identityNo,
+          position,
+          company,
+          issuedDate: formatDate(issuedDate),
+          expiryDate: formatDate(expiryDate)
+        });
       } catch (err) {
         setError(err.message);
       } finally {
@@ -88,6 +107,8 @@ export function TrainingVerification() {
               <DetailRow label="Identity No" value={data.identityNo} />
               <DetailRow label="Position" value={data.position} />
               <DetailRow label="Company" value={data.company} />
+              <DetailRow label="Issue Date" value={data.issuedDate} />
+              <DetailRow label="Expiry Date" value={data.expiryDate} />
             </dl>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <button
@@ -106,12 +127,12 @@ export function TrainingVerification() {
                 Back to Home
               </button>
             </div>
-            <div className="border-t border-slate-100 bg-slate-50 px-8 py-3 text-center text-xs text-slate-400">
+            <div className="border-t border-slate-100 bg-slate-50 px-8 py-3 text-center text-xs text-slate-400 mt-6 rounded-b-xl">
               This result was generated automatically and reflects the certificate status at time of verification.
             </div>
           </div>
         )}
       </div>
-    </section >
+    </section>
   );
 }
