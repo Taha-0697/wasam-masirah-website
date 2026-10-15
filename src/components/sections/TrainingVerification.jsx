@@ -30,7 +30,7 @@ export function TrainingVerification() {
   const endpointApi = import.meta.env.VITE_API_URL;
   const { t } = useLanguage();
   const query = new URLSearchParams(useLocation().search);
-  const trainingCertNumber = query.get('/api/TrainingCertificateNumber') || '';
+  const trainingCertNumber = query.get('TrainingCertificateNumber') || '';
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -47,7 +47,7 @@ export function TrainingVerification() {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch(`${endpointApi}Training/Certificate/${encodeURIComponent(trainingCertNumber)}`);
+        const response = await fetch(`${endpointApi}/api/Training/Certificate/${encodeURIComponent(trainingCertNumber)}`);
         if (!response.ok) {
           throw new Error(response.status === 404 ? 'Training certificate not found.' : `Request failed (${response.status})`);
         }
