@@ -18,7 +18,10 @@ export const EcertificateBar = () => {
   };
 
   return (
-    <div className="bg-slate-900 text-white p-8 rounded-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+    <div
+      id="certificate-verification"
+      className="bg-slate-900 text-white p-8 rounded-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl scroll-mt-24"
+    >
       <div className="space-y-2">
         <span className="bg-stellar-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-md tracking-wider uppercase">
           E-CERTIFICATE FEATURE

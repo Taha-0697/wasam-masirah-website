@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TopBar } from './components/common/TopBar';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
@@ -27,6 +27,19 @@ export function App() {
   const { t } = useLanguage();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('inspection');
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, location.hash]);
 
   if (location.pathname.startsWith('/equipment-verify')) {
     return <EquipmentVerification />;
