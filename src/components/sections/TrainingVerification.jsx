@@ -30,7 +30,7 @@ export function TrainingVerification() {
   const endpointApi = import.meta.env.VITE_API_URL;
   const { t } = useLanguage();
   const query = new URLSearchParams(useLocation().search);
-  const trainingCertNumber = query.get('TrainingCertificateNumber') || '';
+  const trainingCertNumber = query.get('/api/TrainingCertificateNumber') || '';
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
